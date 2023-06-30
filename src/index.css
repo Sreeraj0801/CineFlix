@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+    width: .19rem;
+    height: 2px;
+    background-color: slategrey;
+}
+
+*{
+    scroll-behavior: smooth;
+}
