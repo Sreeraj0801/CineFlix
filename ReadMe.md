@@ -1,4 +1,4 @@
-### cineFlix
+### <h1>CineFLix </h1>
 
 Its a project to find favourite anime and movies , with genre filteration and search
 Project is build with the TMDB (The Movie Database ) API,
@@ -25,13 +25,13 @@ Have used lazy loading and shimmer UI for better user experience. Along with for
 ## Installation
 1. Clone the project from GitHub using the following command
      
-       git clone https://github.com/Sreeraj0801/CineFlix.git 
+        git clone https://github.com/Sreeraj0801/CineFlix.git 
 
 2. Install the dependencies , by
-     
-       npm install
 
-3. Want the api key from TMDB . Get your  api key from
+        npm install
+
+4. Want the api key from TMDB . Get your  api key from
 
         https://www.themoviedb.org/
 
@@ -50,8 +50,8 @@ Have used lazy loading and shimmer UI for better user experience. Along with for
 
 ## Deployment
 The site is hosted on AWS and can be accessed at the following URL:
-    
-    https://fuse-official.online/
+
+        <a href="https://cineflix-org.netlify.app/"> cineflix </a>
 
 ---
 
