@@ -26,33 +26,26 @@ Have used lazy loading and shimmer UI for better user experience. Along with for
 1. Clone the project from GitHub using the following command
      
         git clone https://github.com/Sreeraj0801/CineFlix.git 
-
 2. Install the dependencies , by
 
         npm install
-
-4. Want the api key from TMDB . Get your  api key from
+3. Want the api key from TMDB . Get your  api key from
 
         https://www.themoviedb.org/
-
 4.Create a .env file and creat a variable 
 
         VITE_TMDB_API_KEY = 'your api key'
-
 5.Build Your Project ,
 
         npm run buil
-
 6.Run the project
 
         npm run dev
 
-
 ## Deployment
 The site is hosted on AWS and can be accessed at the following URL:
 
-        <a href="https://cineflix-org.netlify.app/"> cineflix </a>
-
+        https://cineflix-org.netlify.app/
 ---
 
 ## Authors

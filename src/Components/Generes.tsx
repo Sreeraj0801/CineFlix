@@ -100,7 +100,7 @@ const Generes: React.FC<GenereInterface> = ({
                     }}
                   >
                     <div className="h-5 w-5  flex justify-center items-center text-sm rounded-full bg-green-600 text-white pb-[.15rem] ">
-                      &#128473;
+                    🗙
                     </div>
                     <span className="sr-only">Remove badge</span>
                   </button>
