@@ -16,7 +16,7 @@ Project is build with the TMDB (The Movie Database ) API,
 Have used lazy loading and shimmer UI for better user experience. Along with for images used the method
 
 <ul>
-    <li><u>Lazy loading iamges.</u></li>
+    <li><u>Lazy loading imges.</u></li>
     <li><u><b>Debouncing</b></u> for better and faster search results .</li>
 </ul>
 
@@ -37,7 +37,7 @@ Have used lazy loading and shimmer UI for better user experience. Along with for
         VITE_TMDB_API_KEY = 'your api key'
 5.Build Your Project ,
 
-        npm run buil
+        npm run build
 6.Run the project
 
         npm run dev
