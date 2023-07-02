@@ -51,6 +51,8 @@ const Trending = () => {
 
   return (
     <div className="pb-[6rem]  dark:bg-slate-800 bg-slate-50 md:px-20  p-5 dark:text-white text-lg  ">
+    
+
       <h1 className="mb-5 text-4xl font-extrabold leading-none tracking-tight text-gray-900  lg:text-5xl dark:text-white text-center">
         Trending
       </h1>

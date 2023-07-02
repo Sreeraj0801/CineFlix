@@ -11,6 +11,7 @@ import CustomPagination from "../Components/Pagination/CustomPagination";
 import useOnline from "../Hooks/useOnline";
 import Offline from "../Components/Offline";
 import SingleCardUI from "../Components/Shimmer/SingleCardUI";
+import { Helmet } from "react-helmet";
 
 const Search = () => {
   const [tab, setTab] = useState<number>(0);
@@ -18,7 +19,7 @@ const Search = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [results, setResults] = useState<[]>([]);
   const [totalPages, setTotalPages] = useState<number>(10);
-  const [loader,setLoader] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [page, setPage] = useState<number>(1);
 
   const { searchAPI } = API();
@@ -31,7 +32,7 @@ const Search = () => {
       setLoader(true);
       const response = await searchAPI({ type: tab, searchText, page });
       response && setResults(response?.results);
-      setLoader(false)
+      setLoader(false);
       setTotalPages(response.total_pages);
     } catch (error) {
       console.log(error);
@@ -48,6 +49,11 @@ const Search = () => {
 
   return (
     <div className="pb-[6rem] dark:bg-slate-800 bg-slate-50 md:px-20  p-5 dark:text-white text-lg min-h-[89vh] max-h-fit overflow-y-scroll">
+      <Helmet>
+        <title>Search TV series and Movies</title>
+        <meta name="discription" content="Search for movies and tv series" />
+        <meta name="keyword" content="movies search ,tv series search" />
+      </Helmet>
       <div className="lg:px-[30%]">
         <SearchBox prop={{ searchText, setSearchText, getSearch }} />
       </div>
@@ -65,32 +71,37 @@ const Search = () => {
             </div>
           </>
         ) : (
-          <>{
-            loader ? <div className="flex flex-wrap gap-5">
-              {Array(10).fill('u').map(()=>{
-                return <SingleCardUI/>
-              })}
-            </div>:
-                      <div className="">
-                      <section className=" grid md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 md:p-14 p-5  ">
-                        {results &&
-                          results.map((trending: TrendingInterface) => {
-                            tab
-                              ? (trending.media_type = "tv")
-                              : (trending.media_type = "movie");
-          
-                            return <SingleCard key={trending.id} content={trending} />;
-                          })}
-                      </section>
-                      {results?.length ? (
-                        <CustomPagination prop={{ setPage, page, totalPages }} />
-                      ) : (
-                        ""
-                      )}
-                    </div>
-          }
-          </>
+          <>
+            {loader ? (
+              <div className="flex flex-wrap gap-5">
+                {Array(10)
+                  .fill("u")
+                  .map(() => {
+                    return <SingleCardUI />;
+                  })}
+              </div>
+            ) : (
+              <div className="">
+                <section className=" grid md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 md:p-14 p-5  ">
+                  {results &&
+                    results.map((trending: TrendingInterface) => {
+                      tab
+                        ? (trending.media_type = "tv")
+                        : (trending.media_type = "movie");
 
+                      return (
+                        <SingleCard key={trending.id} content={trending} />
+                      );
+                    })}
+                </section>
+                {results?.length ? (
+                  <CustomPagination prop={{ setPage, page, totalPages }} />
+                ) : (
+                  ""
+                )}
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

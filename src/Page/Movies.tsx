@@ -9,6 +9,7 @@ import { TrendingInterface } from "./Trending";
 import TrendingUI from "../Components/Shimmer/TrendingUI";
 import Generes from "../Components/Generes";
 import useGenre from "../Hooks/useGenre";
+import { Helmet } from "react-helmet";
 
 const Movies = () => {
   const [isOnline] = useOnline();
@@ -51,6 +52,12 @@ const Movies = () => {
         movies.length <= 0 ? "h-screen" : ""
       }`}
     >
+      
+      <Helmet>
+        <title>Explore Movies</title>
+        <meta name="discription" content="Get  new movies with genres" />
+        <meta name="keyword" content="new movies,movies,movie-genres" />
+      </Helmet>
       <h1 className="mb-5 text-4xl font-extrabold leading-none tracking-tight text-gray-900  lg:text-5xl dark:text-white text-center">
         Discover Movies
       </h1>
@@ -71,7 +78,7 @@ const Movies = () => {
           <section className="overflow-y-scroll grid md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 md:p-14 p-5">
             {movies &&
               movies.map((trending: TrendingInterface) => {
-                trending.media_type = 'movie'
+                trending.media_type = "movie";
                 return <SingleCard key={trending.id} content={trending} />;
               })}
           </section>

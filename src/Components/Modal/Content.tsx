@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { unavailable, img_500 } from "../../Config/config";
 import Carousel from "../Carousel";
+import { Helmet } from "react-helmet";
 
 export interface ModalInterface {
   prop: {
@@ -65,6 +66,10 @@ const Content: React.FC<ModalInterface> = ({
           className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center md:w-full h-full bg-black bg-opacity-50"
         >
           <div className="relative w-full md:max-w-7xl   md:h-fit h-[90vh] ">
+            <Helmet>
+              <title>{details?.title || details?.name}</title>
+              <meta name="discription" content={details?.overview} />
+            </Helmet>
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                 <div className="md:flex gap-2">
@@ -181,7 +186,7 @@ const Content: React.FC<ModalInterface> = ({
                   </div>
                   <div className="w-4/3  md:w-full">
                     <div className="">
-                    {details.cast && <Carousel prop={details.cast} />}
+                      {details.cast && <Carousel prop={details.cast} />}
                     </div>
                   </div>
                   <div>

@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react";
 import API from "../API/API";
+import { Helmet } from "react-helmet";
 
 export interface GenereInterface {
   type: string;
@@ -72,6 +73,13 @@ const Generes: React.FC<GenereInterface> = ({
 
   return (
     <div className="flex flex-wrap gap-2 ">
+      {selectedGeneres.length > 0 && (
+        <Helmet>
+          <title>
+            Genres :  {`${selectedGeneres.map((g: { name: string }) => g?.name)}`}
+          </title>
+        </Helmet>
+      )}
       {selectedGeneres &&
         selectedGeneres.map((genere: GenereDetailInterface) => {
           return (
@@ -126,4 +134,3 @@ const Generes: React.FC<GenereInterface> = ({
 };
 
 export default Generes;
-

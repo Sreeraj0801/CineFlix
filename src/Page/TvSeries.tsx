@@ -9,6 +9,7 @@ import { TrendingInterface } from "./Trending";
 import TrendingUI from "../Components/Shimmer/TrendingUI";
 import useGenre from "../Hooks/useGenre";
 import Generes from "../Components/Generes";
+import { Helmet } from "react-helmet";
 
 const TvSeries = () => {
   const [isOnline] = useOnline();
@@ -50,7 +51,11 @@ const TvSeries = () => {
         tvSeries.length <= 0 ? "h-screen" : ""
       }`}
     >
-      {" "}
+      <Helmet>
+        <title>Explore TV Series</title>
+        <meta name="discription" content="Get  new tv series with genres" />
+        <meta name="keyword" content="new series,new tv series,tv series,series,series-genres" />
+      </Helmet>
       <h1 className="mb-5 text-4xl font-extrabold leading-none tracking-tight text-gray-900  lg:text-5xl dark:text-white text-center">
         Discover TV Series
       </h1>

@@ -1,6 +1,7 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Helmet from "react-helmet";
 
 //Shimmer UI's
 import HeaderUI from "./Components/Shimmer/HeaderUI.tsx";
@@ -24,7 +25,14 @@ const App = () => {
             <Header />
           </Suspense>
         }
-
+        <Helmet>
+          <title>CineFlix</title>
+          <meta
+            name="discription"
+            content="Get info for all favourite movies and series"
+          />
+          <meta name="keyword" content="Movies,Tv series,search, beepmediahouse" />
+        </Helmet>
         <div className="md:mt-[4.774rem] mt-[4rem]">
           <Routes>
             <Route
