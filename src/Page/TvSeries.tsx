@@ -71,6 +71,7 @@ const TvSeries = () => {
           <section className="overflow-y-scroll grid md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 md:p-14 p-5">
             {tvSeries &&
               tvSeries.map((trending: TrendingInterface) => {
+                trending.media_type = "tv";
                 return <SingleCard key={trending.id} content={trending} />;
               })}
           </section>

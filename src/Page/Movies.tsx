@@ -71,6 +71,7 @@ const Movies = () => {
           <section className="overflow-y-scroll grid md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 md:p-14 p-5">
             {movies &&
               movies.map((trending: TrendingInterface) => {
+                trending.media_type = 'movie'
                 return <SingleCard key={trending.id} content={trending} />;
               })}
           </section>

@@ -10,12 +10,12 @@ const CustomPagination: React.FC<TrendingInterface> = ({
   prop: { setPage, page,totalPages = 50 },
 }) => {
   const handleChange = async (operation: string) => {
+    window.scroll(0, 0);
     if (operation === "prev") {
       setPage(--page);
     } else {
       setPage(++page);
     }
-    window.scroll(0, 0);
   };
  
   return (

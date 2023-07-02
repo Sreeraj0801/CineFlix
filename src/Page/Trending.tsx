@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Offline from "../Components/Offline";
 import useOnline from "../Hooks/useOnline";
 import API from "../API/API";

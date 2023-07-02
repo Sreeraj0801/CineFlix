@@ -6,12 +6,14 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import HeaderUI from "./Components/Shimmer/HeaderUI.tsx";
 import NavigationUI from "./Components/Shimmer/NavigationUI.tsx";
 import TrendingUI from "./Components/Shimmer/TrendingUI.tsx";
+import SearchUI from "./Components/Shimmer/SearchUI.tsx";
 
 const Header = lazy(() => import("./Components/Header.tsx"));
 const Navigation = lazy(() => import("./Components/Navigation.tsx"));
 const Trending = lazy(() => import("./Page/Trending.tsx"));
 const Movies = lazy(() => import("./Page/Movies.tsx"));
-import TvSeries from "./Page/TvSeries.tsx";
+const TvSeries = lazy(() => import("./Page/TvSeries.tsx"));
+const Search = lazy(() => import("./Page/Search.tsx"));
 
 const App = () => {
   return (
@@ -23,7 +25,7 @@ const App = () => {
           </Suspense>
         }
 
-        <div className="mt-[4.774rem]">
+        <div className="md:mt-[4.774rem] mt-[4rem]">
           <Routes>
             <Route
               path="/"
@@ -41,7 +43,22 @@ const App = () => {
                 </Suspense>
               }
             />
-            <Route path="/tvseries" element={<TvSeries />} />
+            <Route
+              path="/tvseries"
+              element={
+                <Suspense fallback={<TrendingUI />}>
+                  <TvSeries />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/search"
+              element={
+                <Suspense fallback={<SearchUI />}>
+                  <Search />
+                </Suspense>
+              }
+            />
           </Routes>
         </div>
         {
