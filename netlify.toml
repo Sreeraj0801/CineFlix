@@ -1,3 +1,4 @@
 [build]
-command = "npm run build"
+command = "npm run build --if-present"
+env = { "CI": "true", "NODE_ENV": "production" }
 publish = "build"
