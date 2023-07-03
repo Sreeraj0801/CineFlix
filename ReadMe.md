@@ -1,6 +1,7 @@
 ### <h1>CineFLix </h1>
 
-Its a project to find favourite anime and movies , with genre filteration and search
+Its a project to find favourite   movies and tv series , with genres filteration and search ,
+Also gives the detail about the content and the trailer and streaming platflrom available.
 Project is build with the TMDB (The Movie Database ) API,
 
 <ul>
