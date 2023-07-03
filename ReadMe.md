@@ -44,7 +44,7 @@ Have used lazy loading and shimmer UI for better user experience. Along with for
         npm run dev
 
 ## Deployment
-The site is hosted on AWS and can be accessed at the following URL:
+The site is hosted on Netlify and can be accessed at the following URL:
 
         https://cineflix-org.netlify.app/
 ---
